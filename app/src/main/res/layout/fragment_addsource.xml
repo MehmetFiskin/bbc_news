@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSourceFragment">
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginTop="50dp"/>
+
+
+    <EditText
+        android:id="@+id/editTextURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginTop="140dp"/>
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginTop="240dp"/>
+
+    <EditText
+        android:id="@+id/editTextGUID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="GUID"
+        android:padding="16dp"
+        android:inputType="text"
+        android:layout_marginTop="370dp"/>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextGUID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Add"/>
+
+</RelativeLayout>
