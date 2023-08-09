@@ -38,16 +38,16 @@ public class HomeFragment extends Fragment {
 
         dataList = new ArrayList<>();
 
-        // Load the saved data from SharedPreferences
+
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", 0);
         Set<String> itemList = sharedPreferences.getStringSet("ItemList", new HashSet<>());
         dataList.addAll(itemList);
 
-        // Create a custom ArrayAdapter to display only the title in the ListView
+
         adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_title, R.id.textViewTitle, dataList);
         listView.setAdapter(adapter);
 
-        // Set a click listener for the ListView items
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Set a listener for the SearchView to filter the ListView items
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -77,12 +77,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // Find the FloatingActionButton and set its click listener
+
         FloatingActionButton fabFavorite = view.findViewById(R.id.fabFavorite);
         fabFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to the FavoriteFragment
+
                 Fragment fragment = new FavoriteFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, fragment)

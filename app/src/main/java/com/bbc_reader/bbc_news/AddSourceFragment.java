@@ -24,24 +24,24 @@ public class AddSourceFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_addsource, container, false);
 
-        // Initialize your EditText views
+
         editTextTitle = view.findViewById(R.id.editTextTitle);
         editTextURL = view.findViewById(R.id.editTextURL);
         editTextDescription = view.findViewById(R.id.editTextDescription);
         editTextGUID = view.findViewById(R.id.editTextGUID);
 
-        // Find the "Add" button and set its click listener
+
         Button addButton = view.findViewById(R.id.buttonAdd);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get user input from EditText views
+
                 String title = editTextTitle.getText().toString();
                 String url = editTextURL.getText().toString();
                 String description = editTextDescription.getText().toString();
                 String guid = editTextGUID.getText().toString();
 
-                // Save the data to SharedPreferences as a list of items
+
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", 0);
                 Set<String> itemList = sharedPreferences.getStringSet("ItemList", new HashSet<>());
                 itemList.add(title + "," + url + "," + description + "," + guid);
@@ -49,10 +49,10 @@ public class AddSourceFragment extends Fragment {
                 editor.putStringSet("ItemList", itemList);
                 editor.apply();
 
-                // Show AlertDialog to inform the user that the item was added successfully
+
                 showSuccessDialog();
 
-                // Navigate back to HomeFragment
+
                 navigateToHomeFragment();
             }
         });
@@ -60,7 +60,7 @@ public class AddSourceFragment extends Fragment {
         return view;
     }
 
-    // Method to show the success dialog
+
     private void showSuccessDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Success")
@@ -74,9 +74,9 @@ public class AddSourceFragment extends Fragment {
         dialog.show();
     }
 
-    // Method to navigate back to HomeFragment
+
     private void navigateToHomeFragment() {
-        // Replace the current fragment with the HomeFragment
+
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, new HomeFragment())
                 .commit();
